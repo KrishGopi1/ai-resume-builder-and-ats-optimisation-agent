@@ -6,7 +6,6 @@ python-docx
 pydantic
 requests
 google-genai
-pyresparser
 spacy
 jinja2
 python-dotenv
