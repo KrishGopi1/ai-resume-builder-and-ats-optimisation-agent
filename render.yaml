@@ -1,0 +1,22 @@
+services:
+  - name: resume-backend
+    type: web
+    env: docker
+    plan: free
+    rootDir: backend
+    autoDeploy: true
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+
+  - name: resume-frontend
+    type: web
+    env: node
+    plan: free
+    rootDir: frontend
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm run serve
+    envVars:
+      - key: VITE_API_BASE
+        value: https://resume-backend.onrender.com
